@@ -41,13 +41,13 @@ function CarShow(){
         shadow-bias={-0.0001}
       />
        <Ground />
-       <Box args={[0.1, 4, 0.3]} position={[0.0, 1, -2]} rotation-y={Math.PI / 2}>
+       <Box args={[0.1, 4, 0.9]} position={[0.0, 1, -3]} rotation-y={Math.PI / 2}>
         <meshStandardMaterial color="#FFD700" />
       </Box>
-      <Box args={[0.1, 4, 0.3]} position={[1.6, 1, -2]} rotation-y={Math.PI / 2}>
+      <Box args={[0.1, 4, 0.9]} position={[1.6, 1, -3]} rotation-y={Math.PI / 2}>
         <meshStandardMaterial color="#A32CC4" />
       </Box>
-      <Box args={[0.1, 4, 0.3]} position={[-1.6, 1, -2]} rotation-y={Math.PI / 2}>
+      <Box args={[0.1, 4, 0.9]} position={[-1.6, 1, -3]} rotation-y={Math.PI / 2}>
         <meshStandardMaterial color="#A32CC4" />
       </Box>
     </>
