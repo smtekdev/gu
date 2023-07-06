@@ -3,7 +3,7 @@ import { Ground } from './Ground';
 import { Canvas } from '@react-three/fiber';
 import "./style.css";
 import { OrbitControls, PerspectiveCamera, useGLTF, Environment} from '@react-three/drei';
-
+import { Box } from '@react-three/drei';
 function CarShow(){
   const guit = useGLTF("./Guitar-Case.glb");
   const wood = useGLTF("./wooden.glb");
@@ -18,7 +18,7 @@ function CarShow(){
     />
     <primitive object={guit.scene} position-z={1} rotation={[0, Math.PI / 2, 0]} scale={0.0150} />
     <primitive object={wood.scene} position-x={-1.6}  scale={0.5} />
-    <primitive object={electric.scene} position-x={1.7} scale={0.0150} />
+    <primitive object={electric.scene} position-x={1.5} scale={0.02} />
     <PerspectiveCamera makeDefault fov={50} position={[3,2,5]} />
     <color args={[0, 0, 0]} attach="background" />
     <Environment preset={"city"} />
@@ -41,7 +41,15 @@ function CarShow(){
         shadow-bias={-0.0001}
       />
        <Ground />
-       
+       <Box args={[0.1, 2, 0.1]} position={[0.0, 1, -2]} rotation-y={Math.PI / 2}>
+        <meshStandardMaterial color="#FFD700" />
+      </Box>
+      <Box args={[0.1, 2, 0.1]} position={[1.6, 1, -2]} rotation-y={Math.PI / 2}>
+        <meshStandardMaterial color="#A32CC4" />
+      </Box>
+      <Box args={[0.1, 2, 0.1]} position={[-1.6, 1, -2]} rotation-y={Math.PI / 2}>
+        <meshStandardMaterial color="#A32CC4" />
+      </Box>
     </>
   )
 }
