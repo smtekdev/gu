@@ -10,7 +10,12 @@ function CarShow(){
   const electric = useGLTF("./electric.glb");
   return(
     <>
-    <OrbitControls  target={[0, 0.35, 0]} maxPolarAngle={1.45}  />
+    <OrbitControls target={[0, 0.35, 0]}  
+            minAzimuthAngle={-Math.PI / 2} // Restrict rotation to -90 degrees (left) to 90 degrees (right)
+            maxAzimuthAngle={Math.PI / 2} // Restrict rotation to -90 degrees (left) to 90 degrees (right)
+            minPolarAngle={Math.PI / 2.5}
+            maxPolarAngle={Math.PI / 2.5}
+    />
     <primitive object={guit.scene} position-z={1} rotation={[0, Math.PI / 2, 0]} scale={0.0150} />
     <primitive object={wood.scene} position-x={-1.6}  scale={0.5} />
     <primitive object={electric.scene} position-x={1.7} scale={0.0150} />
