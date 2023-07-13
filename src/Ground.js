@@ -47,6 +47,8 @@ export function Ground() {
         debug={0}
         reflectorOffset={0.2} // Offsets the virtual camera that projects the reflection. Useful when the reflective surface is some distance from the object's origin (default = 0)
       />
+      
     </mesh>
+  
   );
 }

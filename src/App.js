@@ -5,6 +5,9 @@ import './style.css';
 import { OrbitControls, PerspectiveCamera, useGLTF, Environment } from '@react-three/drei';
 import { Box } from '@react-three/drei';
 import { useEffect } from 'react';
+import pa from "./logo.png";
+import about from "./about.png"
+
 
 function CarShow() {
   const [guitHovered, setGuitHovered] = useState(false);
@@ -22,9 +25,13 @@ function CarShow() {
     cameraRef.current.updateProjectionMatrix();
   }, [aspect]);
 
+
+
+
   return (
     <>
       <OrbitControls
+      enableZoom={false}
         target={[0, 0.35, 0]}
         minAzimuthAngle={-Math.PI / 2}
         maxAzimuthAngle={Math.PI / 2}
@@ -120,19 +127,65 @@ function CarShow() {
       >
         <meshStandardMaterial color={electricHovered ? '#A32CC4' : (guitHovered || woodHovered) ? '#FFD700' : '#A32CC4'} />
       </Box>
+
     </>
   );
 }
 
 function App() {
   return (
+    <div className='back'>
+      <nav id="navbar" class="">
+  <div class="nav-wrapper">
+ 
+    <div class="logo">
+   
+      <a href="#home"><i class=""></i>
+      <img src={pa} width={100} height={100} alt='logo' /></a>
+    </div>
+
+ 
+    <ul id="menu">
+      <li><a href="#home">Home</a></li>
+   <li><a href="#services">Services</a></li>
+   <li><a href="#about">About</a></li>
+   <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="menuIcon">
+  <span class="icon icon-bars"></span>
+  <span class="icon icon-bars overlay"></span>
+</div>
+
+
+
     <div className="canvas-container">
     <Suspense fallback={null}>
       <Canvas shadows camera={{ position: [3, 2, 5], fov: 50 }} resize={{ scroll: false }}>
         <CarShow />
       </Canvas>
     </Suspense>
+
     </div>
+    {/* <section id="about" className="about-section">
+        <div className="about-container">
+          <div className="image-container">
+            <img src={about} alt="About Image" />
+          </div>
+          <div className="text-container">
+            <h2>About</h2>
+            <p>
+              Add your about content here...
+            </p>
+          </div>
+        </div>
+      </section> */}
+     
+    </div>
+    
   );
 }
 
