@@ -7,7 +7,7 @@ import { Box } from '@react-three/drei';
 import { useEffect } from 'react';
 import pa from "./logo.png";
 import about from "./about.png"
-import About from "./About";
+
 
 function CarShow() {
   const [guitHovered, setGuitHovered] = useState(false);
