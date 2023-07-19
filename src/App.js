@@ -164,7 +164,7 @@ function App() {
         <CarShow />
       </Canvas>
     </Suspense>
-    <About />
+   
     </div>
    
     </div>
