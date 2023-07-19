@@ -7,7 +7,7 @@ import { Box } from '@react-three/drei';
 import { useEffect } from 'react';
 import pa from "./logo.png";
 import about from "./about.png"
-
+import About from "./About";
 
 function CarShow() {
   const [guitHovered, setGuitHovered] = useState(false);
@@ -24,9 +24,6 @@ function CarShow() {
     cameraRef.current.aspect = aspect;
     cameraRef.current.updateProjectionMatrix();
   }, [aspect]);
-
-
-
 
   return (
     <>
@@ -127,7 +124,6 @@ function CarShow() {
       >
         <meshStandardMaterial color={electricHovered ? '#A32CC4' : (guitHovered || woodHovered) ? '#FFD700' : '#A32CC4'} />
       </Box>
-
     </>
   );
 }
@@ -141,7 +137,7 @@ function App() {
     <div class="logo">
    
       <a href="#home"><i class=""></i>
-      <img src={pa} width={100} height={100} alt='logo' /></a>
+      <img src={pa} width={100} height={100} /></a>
     </div>
 
  
@@ -168,24 +164,10 @@ function App() {
         <CarShow />
       </Canvas>
     </Suspense>
-
+    <About />
     </div>
-    {/* <section id="about" className="about-section">
-        <div className="about-container">
-          <div className="image-container">
-            <img src={about} alt="About Image" />
-          </div>
-          <div className="text-container">
-            <h2>About</h2>
-            <p>
-              Add your about content here...
-            </p>
-          </div>
-        </div>
-      </section> */}
-     
+   
     </div>
-    
   );
 }
 
